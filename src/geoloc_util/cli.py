@@ -24,7 +24,8 @@ def main():
         if "error" in result:
             print(result["error"])
         else:
-            print(f"Location: {result['name']}, {result['state']}, {result['country']}")
+            print(f"Location: {result['name']}{',' + result['state'] if result['state'] != 'N/A' else '' }, "
+                  f"{result['country']}")
             print(f"Latitude: {result['lat']}")
             print(f"Longitude: {result['lon']}")
         print()
