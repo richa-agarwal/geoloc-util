@@ -34,7 +34,8 @@ geoloc-util [LOCATIONS...]
 
 Examples:
 ```
-geoloc-util "New York, NY" 90210 geoloc_util "Chicago, IL" "Los Angeles, CA" 75001
+geoloc-util "New York, NY" 90210 
+geoloc_util "Chicago, IL" "Los Angeles, CA" 75001
 ```
 
 The utility accepts any number of locations, which can be a mix of city/state combinations and zip codes.
@@ -44,6 +45,9 @@ The utility accepts any number of locations, which can be a mix of city/state co
 To run the tests, ensure you have pytest installed (it's included in the requirements.txt), then run:
 
 ```
+python -m venv venv
+source venv/bin/activate    
+pip install -r requirements.txt     
 pytest tests/test_geoloc_util.py
 ```
 

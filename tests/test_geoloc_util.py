@@ -32,7 +32,7 @@ class TestGeoLocationUtility:
         assert "error" in result
         assert "No results found" in result["error"]
 
-    def test_invalid_zipcode():
+    def test_invalid_zipcode(self):
         result = GeoLocationUtility.get_location_by_zip("00000")
         assert "error" in result
 
@@ -116,8 +116,8 @@ class TestGeoLocationUtility:
         ",",  # Just a comma
         "12",  # Incomplete zipcode
         "A, B",  # Too short for city, state
+        "12345677",  # Invalid length zip code
     ])
     def test_edge_case_inputs(self, location):
         result = GeoLocationUtility.get_location_data(location)
         assert "error" in result
-
